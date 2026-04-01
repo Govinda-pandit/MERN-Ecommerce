@@ -3,6 +3,8 @@ import dotenv from "dotenv"
 import cors from "cors"
 import connectDB from "./config/db.js"
 import AuthRoutes from "./routes/AuthRoutes.js"
+import productRouter from "./routes/productRoutes.js"
+import cartRouter from "./routes/CartRoutes.js"
 
 dotenv.config()
 
@@ -11,6 +13,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use("/api/auth", AuthRoutes)
+app.use("/api/products", productRouter)
+app.use("/cart", cartRouter)
 
 app.get("/", (req, res) => {
     res.send("it is my first get request manualy ready to use")
