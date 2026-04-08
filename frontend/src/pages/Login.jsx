@@ -25,6 +25,7 @@ export default function Login() {
       console.log(res.data)
       //save token to localstorage
       localStorage.setItem("token", res.data.token)
+      localStorage.setItem("userId", res.data.user.id)
       // redirect to home page 
       setTimeout(() => {
         navigate("/")

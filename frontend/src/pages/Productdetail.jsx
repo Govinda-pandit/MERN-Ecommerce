@@ -36,7 +36,16 @@ export default function Productdetail() {
       <h2 className="text-2xl font-bold text-gray-800">{product.title}</h2>
       <p className="text-gray-600 mt-2">{product.description}</p>
       <p className="text-xl font-semibold text-blue-600 mt-4">${product.price}</p>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 cursor-pointer">Add to cart</button>
-    </div>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          addtocart(p._id);
+        }}
+        className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl text-sm font-black transition-all shadow-xl shadow-indigo-200 dark:shadow-indigo-900/20 active:scale-95 flex items-center gap-2 group/btn cursor-pointer whitespace-nowrap"
+      >
+        <svg className="w-4 h-4 transition-transform group-hover/btn:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m8-8H4" /></svg>
+        Add to Cart
+      </button>    </div>
   )
 }
