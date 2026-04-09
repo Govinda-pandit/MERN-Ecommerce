@@ -6,6 +6,7 @@ import AuthRoutes from "./routes/AuthRoutes.js"
 import productRouter from "./routes/productRoutes.js"
 import cartRouter from "./routes/CartRoutes.js"
 import address from "./routes/Address.js"
+import order from "./routes/order.js"
 
 dotenv.config()
 
@@ -17,6 +18,8 @@ app.use("/api/auth", AuthRoutes)
 app.use("/api/products", productRouter)
 app.use("/api/cart", cartRouter)
 app.use("/api/address", address)
+app.use("/api/order", order)
+
 
 app.get("/", (req, res) => {
     res.send("it is my first get request manualy ready to use")

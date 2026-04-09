@@ -11,6 +11,7 @@ import Navbar from "./component/Navbar"
 import Cart from "./pages/Cart"
 import Checkout from "./pages/Checkout"
 import SaveAddress from "./pages/Addresscheckout"
+import Ordersuccess from "./pages/OrderSuccess"
 
 function Layout() {
     return (
@@ -40,9 +41,10 @@ const router = createBrowserRouter([
 
             // address routes
             {path: "/address", element: <SaveAddress />},
-            {path: "/checkout", element: <Checkout />}
+            {path: "/checkout", element: <Checkout />},
 
-
+            //order success
+            {path: "/order/success/:id", element: <Ordersuccess />}
         
         ]
     }
