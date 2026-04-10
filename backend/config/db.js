@@ -2,9 +2,9 @@ import mongoose from "mongoose"
 
 // import React from 'react'
 
-const connectDB = () => {
+const connectDB = async() => {
   try {
-    mongoose.connect(process.env.MONGO_URI)
+    await mongoose.connect(process.env.MONGO_URI)
     console.log("mongoose db connected")
   }
   catch (error) {
