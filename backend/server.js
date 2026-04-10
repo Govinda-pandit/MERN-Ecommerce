@@ -14,11 +14,11 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
-app.use("/api/auth", AuthRoutes)
-app.use("/api/products", productRouter)
-app.use("/api/cart", cartRouter)
-app.use("/api/address", address)
-app.use("/api/order", order)
+app.use("/auth", AuthRoutes)
+app.use("/products", productRouter)
+app.use("/cart", cartRouter)
+app.use("/address", address)
+app.use("/order", order)
 
 
 app.get("/", (req, res) => {
